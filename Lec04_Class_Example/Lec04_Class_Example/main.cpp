@@ -25,6 +25,7 @@ int main(){
 	myService.addMusic("RUDE", "Hearts2Hearts", "RUDE", 2026);
 	myService.addMusic("BANGBANG", "IVE", "REVIVE", 2026);
 	myService.addMusic("JUMP", "BlackPink", "Jump", 2025);
+	myService.addMusic("JUMP", "BlackPink", "Jump", 2025);
 	//title로 search
 	string music_title;
 	cout << "Enter the Music Title: ";
@@ -37,4 +38,20 @@ int main(){
 	else {
 		cout << "Not Found" << endl;
 	}
+
+	string artist_name;
+	cout << "Enter the Artist Name: ";
+	cin >> artist_name;
+
+	vector<Music*> artistResult = myService.searchByArtist(artist_name);
+	if (artistResult.size() > 0) {
+		cout << "Found" << artistResult.size() << "songs by" << artist_name << ":" << endl;
+		for (int i = 0;i < artistResult.size();i++) {
+			cout << artistResult[i]->getTitle() << endl; //pointer형 멤버 변수 -> 로 
+		}
+	}
+	else {
+		cout << "Not Found" << endl;
+	}
+	return 0;
 }

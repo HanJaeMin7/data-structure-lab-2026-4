@@ -41,12 +41,23 @@ public:
 		musicList.push_back(newMusic);
 		cout << title << " by " << artist << " added to " << serviceName << endl;
 	}
-	//Ttile로 검색하기
+	//Title로 검색하기
 	Music* searchByTitle(string title) {
 		for (int i = 0; i < musicList.size(); i++) {
 			if (musicList[i].getTitle() == title)
 				return &musicList[i];
 		}
 		return NULL;
+	}
+	//Artist로 검색하기
+	vector<Music*>searchByArtist(string artist) {
+		vector<Music*> result;
+		//MusicList에 있는 artist 와 입력 artist가 같은면 result에 push_back
+		for (int i = 0; i < musicList.size();i++) {
+			if (musicList[i].getArtist() == artist) {
+				result.push_back(&musicList[i]);
+			}
+		}
+		return result;
 	}
 };
