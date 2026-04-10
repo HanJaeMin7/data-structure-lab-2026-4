@@ -1,0 +1,13 @@
+﻿  Car_Class.cpp
+C:\Users\jamin_lvg3ngm\OneDrive\바탕 화면\data-structure-lab-homework\Lec04_Array_Class\Lec04_Array_Class\Car_Class\Car.h(25,11): warning C4477: 'scanf_s' : 서식 문자열 '%s'에 'unsigned int' 형식의 인수가 필요하지만 variadic 인수 2의 형식이 'size_t'입니다.
+  (소스 파일 'Car_Class.cpp'을(를) 컴파일하는 중)
+      C:\Users\jamin_lvg3ngm\OneDrive\바탕 화면\data-structure-lab-homework\Lec04_Array_Class\Lec04_Array_Class\Car_Class\Car.h(25,11):
+      이 인수는 버퍼 크기로 사용됩니다.
+  
+C:\Users\jamin_lvg3ngm\OneDrive\바탕 화면\data-structure-lab-homework\Lec04_Array_Class\Lec04_Array_Class\Car_Class\Car.h(43,27): warning C4477: 'printf' : 서식 문자열 '%x'에 'unsigned int' 형식의 인수가 필요하지만 variadic 인수 1의 형식이 'Car *'입니다.
+  (소스 파일 'Car_Class.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\jamin_lvg3ngm\OneDrive\바탕 화면\data-structure-lab-homework\Lec04_Array_Class\Lec04_Array_Class\Car_Class\Car.h(43,27): warning C4313: 'printf': 서식 문자열의 '%x'이(가) Car *' 형식의 인수 1과(와) 충돌합니다.
+  (소스 파일 'Car_Class.cpp'을(를) 컴파일하는 중)
+  
+  Car_Class.vcxproj -> C:\Users\jamin_lvg3ngm\OneDrive\바탕 화면\data-structure-lab-homework\Lec04_Array_Class\Lec04_Array_Class\x64\Debug\Car_Class.exe
