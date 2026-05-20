@@ -5,6 +5,8 @@ VisualStudioVersion = 17.8.34525.116
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Lec10_Graph", "Lec10_Graph\Lec10_Graph.vcxproj", "{199F39AF-ED3E-4083-ACFA-1E67A4BC7F98}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Maze", "Maze\Maze.vcxproj", "{5E7048C1-6145-422B-8548-B855154F3B8D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -21,6 +23,14 @@ Global
 		{199F39AF-ED3E-4083-ACFA-1E67A4BC7F98}.Release|x64.Build.0 = Release|x64
 		{199F39AF-ED3E-4083-ACFA-1E67A4BC7F98}.Release|x86.ActiveCfg = Release|Win32
 		{199F39AF-ED3E-4083-ACFA-1E67A4BC7F98}.Release|x86.Build.0 = Release|Win32
+		{5E7048C1-6145-422B-8548-B855154F3B8D}.Debug|x64.ActiveCfg = Debug|x64
+		{5E7048C1-6145-422B-8548-B855154F3B8D}.Debug|x64.Build.0 = Debug|x64
+		{5E7048C1-6145-422B-8548-B855154F3B8D}.Debug|x86.ActiveCfg = Debug|Win32
+		{5E7048C1-6145-422B-8548-B855154F3B8D}.Debug|x86.Build.0 = Debug|Win32
+		{5E7048C1-6145-422B-8548-B855154F3B8D}.Release|x64.ActiveCfg = Release|x64
+		{5E7048C1-6145-422B-8548-B855154F3B8D}.Release|x64.Build.0 = Release|x64
+		{5E7048C1-6145-422B-8548-B855154F3B8D}.Release|x86.ActiveCfg = Release|Win32
+		{5E7048C1-6145-422B-8548-B855154F3B8D}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
