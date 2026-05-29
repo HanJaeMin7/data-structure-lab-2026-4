@@ -30,13 +30,14 @@ int main() {
 	WGraph	wg;
 	wg.load("../graph.txt");
 	wg.display();
-	return 0;
+	printf("\n");
 	WGraphMST Mg;
-	Mg.load("graph.txt");
+	Mg.load("../graph.txt");
 	// printf("입력 그래프: graph.txt\n");
 	// g.display("graph.txt");
 	printf("MST By Kruskal's Algorithm\n");
 	Mg.Kruskal();
+	return 0;
 }
 
 

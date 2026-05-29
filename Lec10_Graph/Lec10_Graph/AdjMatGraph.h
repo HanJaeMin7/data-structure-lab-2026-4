@@ -46,7 +46,7 @@ public:
             fprintf(fp, "%c ", getVertex(i));
 
             for (int j = 0; j < size; j++)
-                fprintf(fp, "%3d", getEdge(i, j));
+                fprintf(fp, "%5d", getEdge(i, j));
 
             fprintf(fp, "\n");
         }
@@ -129,35 +129,37 @@ public:
 
 };
 
+
+
+class HeapNode {
+    int key;
+    int v1;
+    int v2;
+public:
+    HeapNode() : key(), v1(), v2() {}
+    HeapNode(int k, int u, int v) : key(k), v1(u), v2(v){}
+    void setKey(int k, int u, int v) { key = k; v1 = u; v2 = v; }
+    int getKey() { return key; }
+    int getV1() { return v1; }
+    int getV2() { return v2; }
+};
+
 class MinHeap {
     HeapNode node[MAX_ELEMENT];
     int size;
-
 public:
-    MinHeap() : size(0) { }
-
-    bool isFull() {
-        return size == MAX_ELEMENT - 1;
-    }
-
-    bool isEmpty() {
-        return size == 0;
-    }
-
-    HeapNode& getParent(int i) {
-        return node[i / 2];
-    }
+    MinHeap() : size(0) {}
+    bool isFull() { return size == MAX_ELEMENT - 1; }
+    bool isEmpty() { return size == 0; }
+    HeapNode& getParent(int i) { return node[i / 2]; }
 
     void insert(int key, int u, int v) {
         if (isFull()) return;
-
         int i = ++size;
-
-        while (i != 1 && key < node[i / 2].getKey()) {
-            node[i] = node[i / 2];
+        while (i != 1 && key < getParent(i).getKey()) {
+            node[i] = getParent(i);
             i /= 2;
         }
-
         node[i].setKey(key, u, v);
     }
     HeapNode& remove() {
@@ -174,24 +176,12 @@ public:
 
         }
         node[parent] = last;
-        return item;
+        node[0] = item;
+        return node[0];
     }
+
 };
 
-
-
-class HeapNode {
-    int key;
-    int v1;
-    int v2;
-public:
-    HeapNode() : key(0), v1(0), v2(0) {}
-    HeapNode(int k, int u, int v) : key(k), v1(u), v2(v){}
-    void setKey(int k, int u, int v) { key = k; v1 = u; v2 = v; }
-    int getKey() { return key; }
-    int getV1() { return v1; }
-    int getV2() { return v2; }
-};
 class WGraphMST : public WGraph {
 public:
     void Kruskal() {   // kruskal의 최소 비용 신장 트리 프로그램
