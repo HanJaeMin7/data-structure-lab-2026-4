@@ -1,9 +1,9 @@
 #include "AdjMatGraph.h"
-
-void main() {
+#include <stdio.h>
+int main() {
 	//AdjMatGraph g;
 	SrchAMGraph g;
-
+	
 	for (int i = 0;i < 4;i++)
 		g.insertVertex('A' + i);
 	g.insertEdge(0, 1);
@@ -26,4 +26,18 @@ void main() {
 	g.resetVisited();
 	g.DFS(0);
 	printf("\n");
+
+	WGraph	wg;
+	wg.load("../graph.txt");
+	wg.display();
+	return 0;
+	WGraphMST Mg;
+	Mg.load("graph.txt");
+	// printf("입력 그래프: graph.txt\n");
+	// g.display("graph.txt");
+	printf("MST By Kruskal's Algorithm\n");
+	Mg.Kruskal();
 }
+
+
+
