@@ -205,3 +205,79 @@ public:
         }
     }
 };
+
+class WGraphPrim : public WGraph {
+public:
+    int getMinVertex(bool* selected, int* dist) {
+        int minv = 0;
+        int mindist = INF;
+        for (int v=0; v<size; v++) 
+            if (!selected[v] && dist[v] < mindist) {
+                mindist = dist[v];
+                minv = v;
+            }
+        return minv;
+    }
+    void Prim(int s) {
+        bool selected[MAX_VTXS];
+        int dist[MAX_VTXS];
+        for (int i = 0;i < size;i++) {
+            dist[i] = INF;
+            selected[i] = false;
+        }
+        dist[s] = 0;
+        for (int i = 0;i < size;i++) {
+            int u = getMinVertex(selected, dist);
+            selected[u] = true;
+            if (dist[u] == INF)return;
+            printf("%c ", getVertex(u));
+            for (int v = 0; v < size;v++)
+                if (getEdge(u, v) != INF)
+                    if (!selected[v] && getEdge(u, v) < dist[v])
+                        dist[v] = getEdge(u, v);
+        }
+        printf("\n");
+    }
+    
+};
+
+// Dijkstra알고리즘의 최단 경로 탐색 기능이 추가된 그래프
+class WGraphDijkstra : public WGraph {
+    int dist[MAX_VTXS];          // 시작노드로부터의 최단경로 거리
+    bool found[MAX_VTXS];        // 방문한 정점 표시
+public:
+    int chooseVertex() {
+        int min = INF;
+        int minpos = -1;
+        for (int i = 0; i < size; i++)
+            if (dist[i] < min && !found[i]) {
+                min = dist[i];
+                minpos = i;
+            }
+        return minpos;
+    }
+    void printDistance() { // dist 상태를 출력하는 함수
+        for (int i = 0; i < size; i++)
+            printf("%5d", dist[i]);
+        printf("\n");
+    }
+    void ShortestPath(int start) {
+        for (int i = 0; i < size; i++) {
+            dist[i] = getEdge(start, i);
+            found[i] = false;
+        }
+        found[start] = true;                     // 시작노드 방문 표시
+        dist[start] = 0;                         // 최초 거리
+        for (int i = 0; i < size; i++) {
+            printf("Step%2d:", i + 1);
+            printDistance();
+            int u = chooseVertex();
+            found[u] = true;
+            for (int w = 0; w < size; w++) {
+                if (found[w] == false)
+                    if (dist[u] + getEdge(u, w) < dist[w])
+                        dist[w] = dist[u] + getEdge(u, w);
+            }
+        }
+    }
+};
